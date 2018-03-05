@@ -1,0 +1,150 @@
+{{ partial "header.html" }}
+
+			{{ partial "navbar.html" }}
+
+			<!-- Banner -->
+				
+			
+			<section id="banner">
+			<!--<section class="fullsize-video-bg">
+	<div class="inner">
+		<div>
+			<h1>Responsive Background Video</h1>
+      <p>Tagline Text
+		</div>
+	</div>
+	<div id="video-viewport">
+		<video width="1920" height="1280" autoplay muted loop>
+			<source src="http://www.coverr.co/s3/mp4/Winter-Grass.mp4" type="video/mp4" />
+			<source src="http://www.coverr.co/s3/mp4/Winter-Grass.webm" type="video/webm" />
+		</video>
+	</div>
+</section>-->
+				<!--<img src="images/header-homepage.jpg" height="500px" width="100%">-->
+					<div class="homepageCTA">
+						
+					<h2>{{ .Params.headline }}</h2>
+					<p>{{ .Params.tagline }}</p>
+					<ul class="actions">
+						<li><a href="#" class="button">Call to action</a></li>
+					</ul>
+					
+					</div>
+				</section>
+
+			<!-- One -->
+				<div class="wrapper styleHome">
+					<section class="container">
+						<header class="major">
+							<h2>{{ .Params.sectionOneH }}</h2>
+							<p>{{ .Params.sectionOneP}}
+						</header>
+						<div class="row uniform">
+							{{ range where .Data.Pages "Type" "=" "content-block-hover" }}
+    						{{ .Render "content-block-hover" }}
+  						{{ end }}
+						</div>
+					</section>
+				</div>
+
+			<!-- Two -->
+				<div class="wrapper style2">
+					<section class="container 75%">
+						<header class="major">
+							<h2>{{ .Params.sectionTwoH }}</h2>
+							<p>{{ .Params.sectionTwoP }}</p>
+						</header>
+						<div class="row uniform">
+							{{ range where .Data.Pages "Type" "=" "content-block-blue" }}
+    						{{ .Render "content-block-blue" }}
+  						{{ end }}
+						</div>
+					</section>
+				</div>
+
+			<!-- Three -->
+				<div class="wrapper style3">
+					<section class="container">
+						<header class="major">
+							<h2>{{ .Params.sectionThreeH }}</h2>
+						</header>
+						<div class="row">
+							{{ range where .Data.Pages "Type" "=" "content-block-image" }}
+    						{{ .Render "content-block-image" }}
+  						{{ end }}
+						</div>
+					</section>
+				</div>
+
+			<!-- Four -->
+				<div class="wrapper style1">
+					<section class="container 75%">
+						<header class="major">
+							<h2>{{ .Params.sectionFourH }}</h2>
+							<p>{{ .Params.sectionFourP }}</p>
+						</header>
+						<div id="contact" class="box">
+							<div class="row uniform">
+								<div class="7u 12u(narrower)">
+									<form method="post" action="#">
+										<div class="row uniform 50%">
+											<div class="12u">
+												<input type="text" name="name" id="name" placeholder="Name" />
+											</div>
+										</div>
+										<div class="row uniform 50%">
+											<div class="12u">
+												<input type="email" name="email" id="email" placeholder="Email" />
+											</div>
+										</div>
+										<div class="row uniform 50%">
+											<div class="12u">
+												<textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
+											</div>
+										</div>
+										<div class="row uniform 50%">
+											<div class="12u">
+												<ul class="actions">
+													<li><input type="submit" value="Send" /></li>
+													<li><input type="reset" class="alt" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="5u 12u(narrower)">
+									<ul class="labeled-icons">
+										<li>
+											<h3 class="icon fa-map-marker"><span class="label">Address</span></h3>
+											{{ .Params.name }} <br />
+											{{ .Params.address }} <br />
+											{{ .Params.city }}, {{ .Params.state }} {{ .Params.zip }}
+										</li>
+										<li>
+											<h3 class="icon fa-phone"><span class="label">Phone</span></h3>
+											{{ .Params.phone }}
+										</li>
+										<li>
+											<h3 class="icon fa-envelope"><span class="label">Email</span></h3>
+											<a href="#">{{ .Params.email }}</a>
+										</li>
+										<li>
+											<h3 class="icon fa-twitter"><span class="label">Twitter</span></h3>
+											<a href="#">{{ .Params.twitter }}</a>
+										</li>
+										<li>
+											<h3 class="icon fa-facebook"><span class="label">Facebook</span></h3>
+											<a href="#">{{ .Params.facebook }}</a>
+										</li>
+										<li>
+											<h3 class="icon fa-linkedin"><span class="label">LinkedIn</span></h3>
+											<a href="#">{{ .Params.linkedIn }}</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+			{{ partial "footer.html" }}
